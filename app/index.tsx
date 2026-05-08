@@ -42,7 +42,7 @@ export default function HomeScreen() {
 
   const onOpenDetails = (country: Country) => {
     router.push({
-      pathname: '/countries/[countryCode]',
+      pathname: '/country/[countryCode]',
       params: { countryCode: country.localeCode },
     });
   };
