@@ -19,18 +19,26 @@ export function CountryDetailsCard({
   const localeTag = getCountryLocaleTag(country);
 
   return (
-    <View className="rounded-2xl border border-gray-200 bg-white p-5">
-      <Text className="text-4xl mb-2">{country.flagEmoji}</Text>
-      <Text className="text-2xl font-semibold text-gray-900">{country.name}</Text>
-      <Text className="text-sm text-gray-600 mt-1">Dialing: {country.dialingCode}</Text>
-      <Text className="text-sm text-gray-600">Locale code: {formatLocaleCode(country.localeCode)}</Text>
-      <Text className="text-sm text-gray-600">Currency: {country.currency}</Text>
-      <Text className="text-sm text-gray-600">
+    <View className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+      <View className="flex-row items-center justify-between">
+        <Text className="text-4xl mb-2">{country.flagEmoji}</Text>
+        <View className="rounded-full bg-slate-100 px-3 py-1">
+          <Text className="text-xs font-semibold text-slate-700">
+            {country.dialingCode}
+          </Text>
+        </View>
+      </View>
+      <Text className="text-2xl font-semibold text-slate-900">{country.name}</Text>
+      <Text className="text-sm text-slate-600 mt-1">
+        Locale code: {formatLocaleCode(country.localeCode)}
+      </Text>
+      <Text className="text-sm text-slate-600 mt-3">Currency: {country.currency}</Text>
+      <Text className="text-sm text-slate-600">
         Currency code: {country.currencyCode} {country.currencyIcon}
       </Text>
 
-      <View className="mt-4 rounded-xl bg-blue-50 p-3">
-        <Text className="text-sm text-blue-900">
+      <View className="mt-4 rounded-2xl bg-blue-50 p-4">
+        <Text className="text-sm text-blue-900 font-medium">
           Display locale ({selectedLocale}) example:{' '}
           {formatCurrencyExample(country.currencyCode, selectedLocale)}
         </Text>

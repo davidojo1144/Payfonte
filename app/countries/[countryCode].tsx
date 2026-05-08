@@ -46,12 +46,22 @@ export default function CountryDetailsScreen() {
   }
 
   return (
-    <ScrollView className="flex-1 bg-gray-50" contentContainerStyle={{ padding: 16 }}>
+    <ScrollView
+      className="flex-1 bg-slate-50"
+      contentContainerStyle={{ padding: 16, paddingBottom: 24 }}
+    >
+      <View className="rounded-3xl bg-secondary px-4 py-4 mb-4">
+        <Text className="text-white text-lg font-bold">Country details</Text>
+        <Text className="text-purple-100 mt-1">
+          Detailed metadata for selected country context
+        </Text>
+      </View>
+
       <CountryDetailsCard country={country} selectedLocale={selectedLocale} />
 
-      <View className="mt-4 rounded-2xl bg-white p-4 border border-gray-200">
-        <Text className="text-base font-semibold text-gray-900">Raw locale code</Text>
-        <Text className="text-gray-700 mt-1">{country.localeCode}</Text>
+      <View className="mt-4 rounded-2xl bg-white p-4 border border-slate-200">
+        <Text className="text-base font-semibold text-slate-900">Raw locale code</Text>
+        <Text className="text-slate-700 mt-1">{country.localeCode}</Text>
       </View>
     </ScrollView>
   );

@@ -24,7 +24,14 @@ export default function RootLayout() {
       client={queryClient}
       persistOptions={{ persister: asyncStoragePersister }}
     >
-      <Stack>
+      <Stack
+        screenOptions={{
+          headerStyle: { backgroundColor: '#ffffff' },
+          headerShadowVisible: false,
+          headerTitleStyle: { fontWeight: '700', color: '#0f172a' },
+          contentStyle: { backgroundColor: '#f8fafc' },
+        }}
+      >
         <Stack.Screen name="index" options={{ title: 'Countries' }} />
         <Stack.Screen
           name="countries/[countryCode]"
