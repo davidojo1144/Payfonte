@@ -33,13 +33,6 @@ export default function RootLayout() {
         }}
       >
         <Stack.Screen name="index" options={{ title: 'Countries' }} />
-        <Stack.Screen
-          name="country/[countryCode]"
-          options={{
-            title: 'Country Details',
-            headerBackButtonDisplayMode: 'minimal',
-          }}
-        />
       </Stack>
       <Toast />
     </PersistQueryClientProvider>
