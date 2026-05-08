@@ -1,4 +1,6 @@
-import { QueryClientProvider } from '@tanstack/react-query';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
+import { createAsyncStoragePersister } from '@tanstack/query-async-storage-persister';
 import { Stack } from 'expo-router';
 import { useEffect } from 'react';
 import Toast from 'react-native-toast-message';
@@ -9,17 +11,27 @@ import '../global.css';
 
 export default function RootLayout() {
   const { checkAuth } = useAuthStore();
+  const asyncStoragePersister = createAsyncStoragePersister({
+    storage: AsyncStorage,
+  });
 
   useEffect(() => {
     checkAuth();
   }, []);
 
   return (
-    <QueryClientProvider client={queryClient}>
+    <PersistQueryClientProvider
+      client={queryClient}
+      persistOptions={{ persister: asyncStoragePersister }}
+    >
       <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="index" options={{ title: 'Countries' }} />
+        <Stack.Screen
+          name="countries/[countryCode]"
+          options={{ title: 'Country Details' }}
+        />
       </Stack>
       <Toast />
-    </QueryClientProvider>
+    </PersistQueryClientProvider>
   );
 }

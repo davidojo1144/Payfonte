@@ -2,7 +2,9 @@ import axios from 'axios';
 import * as SecureStore from 'expo-secure-store';
 
 const api = axios.create({
-  baseURL: process.env.EXPO_PUBLIC_API_URL || 'https://api.example.com',
+  baseURL:
+    process.env.EXPO_PUBLIC_API_URL ||
+    'https://api.payfonte.com/payfusion/public/v1',
   headers: {
     'Content-Type': 'application/json',
   },
