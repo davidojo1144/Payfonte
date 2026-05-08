@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "temp-app",
-    "slug": "temp-app",
+    "name": "payfonte",
+    "slug": "payfonte",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,7 +25,8 @@
       "permissions": [
         "android.permission.USE_BIOMETRIC",
         "android.permission.USE_FINGERPRINT"
-      ]
+      ],
+      "package": "com.optimizetech.payfonte"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -35,7 +36,7 @@
       "expo-secure-store",
       "expo-local-authentication"
     ],
-    "scheme": "temp-app",
+    "scheme": "payfonte",
     "extra": {
       "router": {},
       "eas": {
