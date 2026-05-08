@@ -35,7 +35,10 @@ export default function RootLayout() {
         <Stack.Screen name="index" options={{ title: 'Countries' }} />
         <Stack.Screen
           name="countries/[countryCode]"
-          options={{ title: 'Country Details' }}
+          options={{
+            title: 'Country Details',
+            headerBackButtonDisplayMode: 'minimal',
+          }}
         />
       </Stack>
       <Toast />
